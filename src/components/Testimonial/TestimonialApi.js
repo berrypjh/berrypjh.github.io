@@ -20,7 +20,7 @@ const TestimonialApi = [
       "S3",
       "ESLint",
       "prettier",
-      "Mui",
+      "material",
       "Notion",
       "Teams",
       "GoogleDrive",
@@ -45,7 +45,7 @@ const TestimonialApi = [
       "Solidity",
       "React",
       "Nodejs",
-      "Mui",
+      "material",
       "Ganache",
       "Truffle",
       "Notion",
@@ -65,7 +65,7 @@ const TestimonialApi = [
     explanation:
       "채굴, 코인거래 기능을 직접 구현해봄으로써 비트코인 블록체인 이해하기",
     term: "2022-01-06 ~ 2022-02-07 (총 32일)",
-    items: ["Javascript", "React", "Nodejs", "Mui", "Tistory", "VSCode"],
+    items: ["Javascript", "React", "Nodejs", "material", "Tistory", "VSCode"],
     mission:
       "naivecoin, 비트코인 코어 등을 참고하여 블로그 정리 및 구현하기 (개인 프로젝트)",
 
@@ -89,7 +89,7 @@ const TestimonialApi = [
       "Mongodb",
       "EC2",
       "RDS",
-      "Mui",
+      "material",
       "GoogleDrive",
       "VSCode",
     ],
