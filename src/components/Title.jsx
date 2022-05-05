@@ -19,7 +19,7 @@ const Section = styled.section`
     align-items: center;
     text-align: center;
     width: 100%;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 
     .portfolio_text {
       align-items: center;
