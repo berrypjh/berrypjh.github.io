@@ -19,6 +19,12 @@ export default function Home() {
           </div>
           <div className="subTitle">
             <p>#블록체인 #웹 #블로그 #정리 #신입</p>
+            <a href="https://github.com/berrypjh">
+              <img src="/stack_icons/GitHub.png" alt="" />
+            </a>
+            <a href="https://berrypjh.tistory.com">
+              <img src="/stack_icons/Tistory.png" alt="" />
+            </a>
           </div>
         </div>
       </motion.div>
@@ -54,6 +60,13 @@ const Section = styled.section`
         p {
           width: 100%;
           margin-bottom: 2rem;
+        }
+
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          margin-right: 10px;
         }
       }
     }
