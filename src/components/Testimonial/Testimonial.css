@@ -39,6 +39,10 @@
   border-width: 0;
 }
 
+.Testimonial .slide_button .btn_shadow svg:hover {
+  cursor: pointer;
+}
+
 .Testimonial .slide_button .prev_btn {
   margin-right: 30px;
 }

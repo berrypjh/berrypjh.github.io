@@ -10,33 +10,37 @@ export default function Skills() {
 
   const plans = [
     {
+      name: "Blockchain",
+    },
+    {
       name: "Server",
     },
     {
       name: "Client",
     },
     {
-      name: "DevOps",
-    },
-    {
-      name: "Language",
+      name: "etc",
     },
   ];
   const data = [
+    {
+      value: "Web3.js",
+      type: "Blockchain",
+    },
+    {
+      value: "Ganache",
+      type: "Blockchain",
+    },
+    {
+      value: "Truffle",
+      type: "Blockchain",
+    },
     {
       value: "Nodejs",
       type: "Server",
     },
     {
       value: "Linux",
-      type: "Server",
-    },
-    {
-      value: "Ganache",
-      type: "Server",
-    },
-    {
-      value: "Truffle",
       type: "Server",
     },
     {
@@ -64,28 +68,32 @@ export default function Skills() {
       type: "Client",
     },
     {
+      value: "HTML/CSS",
+      type: "Client",
+    },
+    {
       value: "ESLint",
       type: "Client",
     },
     {
-      value: "EC2",
-      type: "DevOps",
-    },
-    {
-      value: "RDS",
-      type: "DevOps",
-    },
-    {
-      value: "S3",
-      type: "DevOps",
-    },
-    {
       value: "Javascript",
-      type: "Language",
+      type: "etc",
     },
     {
       value: "solidity",
-      type: "Language",
+      type: "etc",
+    },
+    {
+      value: "EC2",
+      type: "etc",
+    },
+    {
+      value: "RDS",
+      type: "etc",
+    },
+    {
+      value: "S3",
+      type: "etc",
     },
   ];
 

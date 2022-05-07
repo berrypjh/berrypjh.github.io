@@ -9,14 +9,6 @@ export default function Blog() {
   const [element, controls] = useScroll();
   const blogsData = [
     {
-      link: "https://blog.naver.com/junhyegpark",
-      title: "Naver Blog",
-      type: "웹 블로그",
-      description:
-        "Next.js, React, Node.js, HTML/CSS 등 WEB 관련 공부 내용을 정리해두는 블로그입니다.",
-      imgNumber: 4,
-    },
-    {
       link: "https://berrypjh.tistory.com/",
       title: "Tistory Blog",
       type: "블록체인 블로그",
@@ -31,6 +23,14 @@ export default function Blog() {
       description:
         "팀프로젝트에서 내가 맡은 파트, 느낀점 등 프로젝트에 대해 상세하게 정리해두는 노션입니다.",
       imgNumber: 6,
+    },
+    {
+      link: "https://blog.naver.com/junhyegpark",
+      title: "Naver Blog",
+      type: "웹 블로그",
+      description:
+        "Next.js, React, Node.js, HTML/CSS 등 WEB 관련 공부 내용을 정리해두는 개인 블로그입니다.",
+      imgNumber: 4,
     },
   ];
 
