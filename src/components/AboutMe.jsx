@@ -29,8 +29,6 @@ function AboutMe() {
             <img src="/Profile/Park.png" alt="" />
             <span className="info">
               <h3 className="title">박준혁 (Junhyuk Park)</h3>
-              <p className="description">- 1996.08.23</p>
-              <p className="description">- 010-4035-2601</p>
               <p className="description">- 서울특별시 관악구</p>
               <p className="description">- junhyeg08@gmail.com</p>
             </span>
