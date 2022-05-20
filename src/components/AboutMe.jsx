@@ -49,14 +49,6 @@ function AboutMe() {
                 2021.08 ~ 2022.05 블록체인 기반 핀테크 및 응용 SW개발자 양성과정
                 수료
               </h4>
-              <h4 className="description">
-                <img src="/favicon.png" alt="star" />
-                2019.03 ~ 2020.02 학점은행제 전기과 4년 졸업
-              </h4>
-              <h4 className="description">
-                <img src="/favicon.png" alt="star" />
-                2015.03 ~ 2019.02 국제대학교 전기과 졸업
-              </h4>
             </div>
             <h3 className="skills__content__main">
               비트코인을 이해하기 위해 간단한 비트코인 코어도 구현하고 web3,
