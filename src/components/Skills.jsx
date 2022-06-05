@@ -80,6 +80,10 @@ export default function Skills() {
       type: "etc",
     },
     {
+      value: "Typescript",
+      type: "etc",
+    },
+    {
       value: "solidity",
       type: "etc",
     },
