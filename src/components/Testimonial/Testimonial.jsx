@@ -93,6 +93,12 @@ const Testimonial = () => {
                 <FaCoffee />
               </button>
               <button
+                className="btn_shadow prev_btn"
+                onClick={() => setIndex(6)}
+              >
+                <FaCoffee />
+              </button>
+              <button
                 className="btn_shadow next_btn"
                 onClick={() => setIndex(index + 1)}
               >

@@ -136,6 +136,19 @@ const TestimonialApi = [
       "https://quark-tangelo-d51.notion.site/1-HTML-CSS-JavaScript-4ad0f75e375b42f8a08dd21e16943fbe",
     GiHubLink: "https://github.com/kyunghyunHan/projectspace",
   },
+  {
+    id: 7,
+    image: "/project_img/Cafe.png",
+    name: "Space Cafe 프로젝트",
+    explanation: "우주 테마의 개인 카페 사이트 만들기",
+    term: "2021 -09-01 ~ 2021-09-08 (총 7일)",
+    items: ["Javascript", "HTML", "CSS", "VSCode"],
+    mission:
+      "Menu 페이지 (쿠키를 이용한 장바구니, 우편 API, 결제 API, 반응형) 구현하기",
+    BlogLink:
+      "https://quark-tangelo-d51.notion.site/1-HTML-CSS-JavaScript-4ad0f75e375b42f8a08dd21e16943fbe",
+    GiHubLink: "https://github.com/kyunghyunHan/projectspace",
+  },
 ];
 
 export default TestimonialApi;
