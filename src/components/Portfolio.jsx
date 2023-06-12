@@ -38,7 +38,6 @@ const Section = styled.section`
   min-height: 100vh;
   padding: 2rem 0;
   margin-top: 70px;
-  margin-bottom: -100px;
   .background {
     position: relative;
     .design1 {

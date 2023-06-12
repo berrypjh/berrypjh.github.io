@@ -24,7 +24,7 @@ export default function App() {
       <Portfolio />
 
       {/* 블로그 */}
-      <Blog />
+      {/* <Blog /> */}
 
       <Footer />
     </motion.div>

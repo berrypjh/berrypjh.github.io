@@ -10,6 +10,9 @@ import {
   FaUserFriends,
   FaMountain,
   FaCoffee,
+  FaWallet,
+  FaRegWindowMaximize,
+  FaDonate,
 } from "react-icons/fa";
 
 const Testimonial = () => {
@@ -60,41 +63,53 @@ const Testimonial = () => {
                 className="btn_shadow prev_btn"
                 onClick={() => setIndex(0)}
               >
-                <FaHeadphones />
+                <FaDonate />
               </button>
               <button
                 className="btn_shadow prev_btn"
                 onClick={() => setIndex(1)}
               >
-                <FaVoteYea />
+                <FaRegWindowMaximize />
               </button>
               <button
                 className="btn_shadow prev_btn"
                 onClick={() => setIndex(2)}
               >
-                <FaBitcoin />
+                <FaWallet />
               </button>
               <button
                 className="btn_shadow prev_btn"
                 onClick={() => setIndex(3)}
               >
-                <FaUserFriends />
+                <FaHeadphones />
               </button>
               <button
                 className="btn_shadow prev_btn"
                 onClick={() => setIndex(4)}
               >
-                <FaMountain />
+                <FaVoteYea />
               </button>
               <button
                 className="btn_shadow prev_btn"
                 onClick={() => setIndex(5)}
               >
-                <FaCoffee />
+                <FaBitcoin />
               </button>
               <button
                 className="btn_shadow prev_btn"
                 onClick={() => setIndex(6)}
+              >
+                <FaUserFriends />
+              </button>
+              <button
+                className="btn_shadow prev_btn"
+                onClick={() => setIndex(7)}
+              >
+                <FaMountain />
+              </button>
+              <button
+                className="btn_shadow prev_btn"
+                onClick={() => setIndex(8)}
               >
                 <FaCoffee />
               </button>

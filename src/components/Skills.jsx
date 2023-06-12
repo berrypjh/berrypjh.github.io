@@ -28,6 +28,10 @@ export default function Skills() {
       type: "Blockchain",
     },
     {
+      value: "Hardhat",
+      type: "Blockchain",
+    },
+    {
       value: "Ganache",
       type: "Blockchain",
     },
@@ -77,6 +81,10 @@ export default function Skills() {
     },
     {
       value: "Javascript",
+      type: "etc",
+    },
+    {
+      value: "Go",
       type: "etc",
     },
     {

@@ -49,9 +49,19 @@ function AboutMe() {
                 2021.08 ~ 2022.05 블록체인 기반 핀테크 및 응용 SW개발자 양성과정
                 수료
               </h4>
+              <h4 className="description">
+                <img src="/favicon.png" alt="star" />
+                2021.08 ~ 2022.05 빗썸 테크 아카데미 블록체인 코스 수료
+              </h4>
+              <h4 className="description">
+                <img src="/favicon.png" alt="star" />
+                2023.04 ~ 2023.06 메타버스 핵심기술, 블록체인 기반의 기술사업화
+                전문인력 양성과정 수료
+              </h4>
             </div>
             <h3 className="skills__content__main">
-              비트코인을 이해하기 위해 간단한 비트코인 코어도 구현하고 web3,
+              비트코인을 이해하기 위해 간단한 비트코인 프로젝트도 하고 Lisk,
+              Near chain 의 프로젝트도 진행해보았습니다. 이외로 web3, hardhat,
               truffle, ganache 을 이용한 DApp 투표 앱, 스트리밍 사이트
               프로젝트를 진행해보았습니다.
             </h3>
