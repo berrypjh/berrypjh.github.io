@@ -1,18 +1,18 @@
 const TestimonialApi = [
   {
     id: 1,
-    image: "/project_img/Luniverse.png",
+    image: "/project_img/Luniverse.gif",
     name: "Know Your Cost",
     explanation: "다중 체인 네트워크에서 가스 요금 및 스테이킹 관리를 위한 가계부 서비스를 제공합니다.",
     term: "2023-05-29 ~ 2023-06-06 (총 8일)",
     items: ["Luniverse", "Javascript", "React", "Zustand", "Notion", "VSCode"],
-    mission: "가스 요금 달력에 표기, 스테이킹 기능, Luniverse API 분석",
+    mission: "가스 요금 달력에 표기, Luniverse API 분석",
     BlogLink: "https://dorahacks.io/buidl/6094",
     GiHubLink: "https://github.com/Stray-Dogs-E1I3/KYC_Front_End",
   },
   {
     id: 2,
-    image: "/project_img/Near.png",
+    image: "/project_img/Near.gif",
     name: "Near blockchain explorer community",
     explanation: "유저들의 WEB2 에서 WEB3 온보딩을 위한 소셜커뮤니티",
     term: "2023-05-12 ~ 2023-05-21 (총 9일)",
@@ -34,6 +34,17 @@ const TestimonialApi = [
   },
   {
     id: 4,
+    image: "/project_img/staking.gif",
+    name: "Staking DApp 팀 프로젝트",
+    explanation: "블록체인 네트워크에서의 스테이킹 방식을 직접 구현하여 스테이킹 기본 방식 이해하기",
+    term: "2022-10-25 ~ 2022-10-31 (총 7일)",
+    items: ["Javascript", "Solidity", "React", "Web3", "Hardhat", "Notion", "VSCode", "Remix"],
+    mission: "기존 staking solidity code 를 hardhat 으로 배포하고 web3-react, web3.js 를 이용하여 연결하기",
+    BlogLink: "https://quark-tangelo-d51.notion.site/Ethereum-Staking-DApp-713b8bae59d24911a0aa26207ce9b9df",
+    GiHubLink: "https://github.com/codestates/BTAdAppProject-09",
+  },
+  {
+    id: 5,
     image: "/project_img/Musit.png",
     name: "Musit x NFT 음원 프로젝트",
     explanation: "음원에 블록체인을 적용하여 투명한 수익 분배를 제공하는 이더리움 기반 NFT 음원 스트리밍 플랫폼 개발하기",
@@ -65,7 +76,7 @@ const TestimonialApi = [
     GiHubLink: "https://github.com/webwebweb3/musit_nft",
   },
   {
-    id: 5,
+    id: 6,
     image: "/project_img/vote.png",
     name: "온라인 투표 시스템 DAPP 프로젝트",
     explanation: "이더리움 블록체인 기술을 통해 투표 정보의 투명성과 기밀성이 보장된 온라인 투표시스템 개발하기",
@@ -76,7 +87,7 @@ const TestimonialApi = [
     GiHubLink: "https://github.com/webwebweb3/voting",
   },
   {
-    id: 6,
+    id: 7,
     image: "/project_img/coin.png",
     name: "비트코인 블록체인 프로젝트",
     explanation: "채굴, 코인거래 기능을 직접 구현해봄으로써 비트코인 블록체인 이해하기",
@@ -88,7 +99,7 @@ const TestimonialApi = [
     GiHubLink: "https://github.com/berrypjh/Bitcoin-Blockchain",
   },
   {
-    id: 7,
+    id: 8,
     image: "/project_img/SNS.png",
     name: "커플 SNS 사이트 프로젝트",
     explanation: "싸이월드 감성으로 추억을 상기시켜주며 연인을 위한 선물을 구매하고 즐길 수 있는 사이트 개발하기",
@@ -99,7 +110,7 @@ const TestimonialApi = [
     GiHubLink: "https://github.com/pl2hteam/pl2hproject",
   },
   {
-    id: 8,
+    id: 9,
     image: "/project_img/mountain.png",
     name: "등산 커뮤니티 사이트 프로젝트",
     explanation: "어른들의 여가 생활로만 생각햇던 등산이 젊은 세대들의 관심이 높아짐에 따라 젊은 세대들도 즐길 수 있는 SNS 사이트 제작하기",
@@ -110,7 +121,7 @@ const TestimonialApi = [
     GiHubLink: "https://github.com/Mr-butter/mountain",
   },
   {
-    id: 9,
+    id: 10,
     image: "/project_img/Cafe.png",
     name: "Space Cafe 프로젝트",
     explanation: "우주 테마의 개인 카페 사이트 만들기",

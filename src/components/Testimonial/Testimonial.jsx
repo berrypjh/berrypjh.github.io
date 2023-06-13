@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Testimonial.css";
 import Slide from "./Slide";
 import TestimonialApi from "./TestimonialApi";
-import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import { BsFillBucketFill, BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import { FaVoteYea, FaHeadphones, FaBitcoin, FaUserFriends, FaMountain, FaCoffee, FaWallet, FaRegWindowMaximize, FaDonate } from "react-icons/fa";
 
 const Testimonial = () => {
@@ -49,21 +49,24 @@ const Testimonial = () => {
                 <FaWallet />
               </button>
               <button className="btn_shadow prev_btn" onClick={() => setIndex(3)}>
-                <FaHeadphones />
+                <BsFillBucketFill />
               </button>
               <button className="btn_shadow prev_btn" onClick={() => setIndex(4)}>
-                <FaVoteYea />
+                <FaHeadphones />
               </button>
               <button className="btn_shadow prev_btn" onClick={() => setIndex(5)}>
-                <FaBitcoin />
+                <FaVoteYea />
               </button>
               <button className="btn_shadow prev_btn" onClick={() => setIndex(6)}>
-                <FaUserFriends />
+                <FaBitcoin />
               </button>
               <button className="btn_shadow prev_btn" onClick={() => setIndex(7)}>
-                <FaMountain />
+                <FaUserFriends />
               </button>
               <button className="btn_shadow prev_btn" onClick={() => setIndex(8)}>
+                <FaMountain />
+              </button>
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(9)}>
                 <FaCoffee />
               </button>
               <button className="btn_shadow next_btn" onClick={() => setIndex(index + 1)}>
