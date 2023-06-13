@@ -1,27 +1,12 @@
 import React from "react";
 import TestimonialApi from "./TestimonialApi";
 
-const Slide = ({
-  id,
-  image,
-  items,
-  name,
-  explanation,
-  term,
-  mission,
-  valueIndex,
-  index,
-  GiHubLink,
-  BlogLink,
-}) => {
+const Slide = ({ id, image, items, name, explanation, term, mission, valueIndex, index, GiHubLink, BlogLink }) => {
   let position = "nextSlide";
   if (valueIndex === index) {
     position = "activeSlide";
   }
-  if (
-    valueIndex === index - 1 ||
-    (index === 0 && valueIndex === TestimonialApi.length - 1)
-  ) {
+  if (valueIndex === index - 1 || (index === 0 && valueIndex === TestimonialApi.length - 1)) {
     position = "lastSlide";
   }
 
@@ -34,11 +19,9 @@ const Slide = ({
             <div className="details_button">
               <span className="details_btn">
                 <a href={BlogLink}>
-                  {id !== 3 ? (
-                    <img src="/stack_icons/Notion.png" alt="" />
-                  ) : (
-                    <img src="/stack_icons/Tistory.png" alt="" />
-                  )}
+                  {(id === 1 || id === 2) && <img src="/stack_icons/H.png" alt="" />}
+                  {id === 6 && <img src="/stack_icons/Tistory.png" alt="" />}
+                  {!(id === 1 || id === 2 || id === 6) && <img src="/stack_icons/Notion.png" alt="" />}
                   <div className="btn_text">상세 정보</div>
                 </a>
               </span>
@@ -64,11 +47,7 @@ const Slide = ({
                 items.map((item, index) => {
                   return (
                     <span key={item}>
-                      <img
-                        className="imgItem"
-                        src={`/stack_icons/${item}.png`}
-                        alt={item}
-                      />
+                      <img className="imgItem" src={`/stack_icons/${item}.png`} alt={item} />
                     </span>
                   );
                 })}

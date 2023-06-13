@@ -3,17 +3,7 @@ import "./Testimonial.css";
 import Slide from "./Slide";
 import TestimonialApi from "./TestimonialApi";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
-import {
-  FaVoteYea,
-  FaHeadphones,
-  FaBitcoin,
-  FaUserFriends,
-  FaMountain,
-  FaCoffee,
-  FaWallet,
-  FaRegWindowMaximize,
-  FaDonate,
-} from "react-icons/fa";
+import { FaVoteYea, FaHeadphones, FaBitcoin, FaUserFriends, FaMountain, FaCoffee, FaWallet, FaRegWindowMaximize, FaDonate } from "react-icons/fa";
 
 const Testimonial = () => {
   const [data, setdata] = useState(TestimonialApi);
@@ -42,81 +32,41 @@ const Testimonial = () => {
         <div className="container">
           <div className="slide">
             {data.map((value, valueIndex) => {
-              return (
-                <Slide
-                  key={value.id}
-                  {...value}
-                  valueIndex={valueIndex}
-                  index={index}
-                />
-              );
+              return <Slide key={value.id} {...value} valueIndex={valueIndex} index={index} />;
             })}
 
             <div className="slide_button">
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(index - 1)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(index - 1)}>
                 <BsFillCaretLeftFill />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(0)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(0)}>
                 <FaDonate />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(1)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(1)}>
                 <FaRegWindowMaximize />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(2)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(2)}>
                 <FaWallet />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(3)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(3)}>
                 <FaHeadphones />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(4)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(4)}>
                 <FaVoteYea />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(5)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(5)}>
                 <FaBitcoin />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(6)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(6)}>
                 <FaUserFriends />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(7)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(7)}>
                 <FaMountain />
               </button>
-              <button
-                className="btn_shadow prev_btn"
-                onClick={() => setIndex(8)}
-              >
+              <button className="btn_shadow prev_btn" onClick={() => setIndex(8)}>
                 <FaCoffee />
               </button>
-              <button
-                className="btn_shadow next_btn"
-                onClick={() => setIndex(index + 1)}
-              >
+              <button className="btn_shadow next_btn" onClick={() => setIndex(index + 1)}>
                 <BsFillCaretRightFill />
               </button>
             </div>

@@ -12,13 +12,7 @@ export default function Navbar() {
   const html = document.querySelector("html");
   html.addEventListener("click", (e) => setIsNavOpen(false));
   return (
-    <Nav
-      state={isNavOpen ? 1 : 0}
-      variants={navAnimation}
-      transition={{ delay: 0.1 }}
-      ref={element}
-      animate={controls}
-    >
+    <Nav state={isNavOpen ? 1 : 0} variants={navAnimation} transition={{ delay: 0.1 }} ref={element} animate={controls}>
       <div className="brand__container">
         <div className="toggle">
           {isNavOpen ? (
@@ -46,9 +40,6 @@ export default function Navbar() {
           </li>
           <li>
             <a href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="#blog">Blog</a>
           </li>
         </ul>
       </div>
