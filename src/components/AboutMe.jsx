@@ -35,11 +35,13 @@ function AboutMe() {
           </div>
           <div className="skills__content">
             <h1 className="skills__content__main">정리와 관리에 능하며 꾸준히 공부하고 성장하는 신입 프로그래머입니다.</h1>
-            <h3 className="skills__content__main">한 번의 기능 구현을 위해 따라 하는 것이 아니라 구현하고 필요할 때 언제든지 참조할 수 있도록 나만의 블로그에 정리를 해두는 습관을 가지고 있습니다.</h3>
+            <h3 className="skills__content__main">
+              한 번의 기능 구현을 위해 따라 하는 것이 아니라 구현하고 필요할 때 언제든지 참조할 수 있도록 나만의 노션과 블로그에 정리를 해두는 습관을 가지고 있습니다.
+            </h3>
             <div className="career">
               <h4 className="description">
                 <img src="/favicon.png" alt="star" />
-                2021.08 ~ 2022.05 블록체인 기반 핀테크 및 응용 SW개발자 양성과정 수료
+                2023.04 ~ 2023.06 메타버스 핵심기술, 블록체인 기반의 기술사업화 전문인력 양성과정 수료
               </h4>
               <h4 className="description">
                 <img src="/favicon.png" alt="star" />
@@ -47,7 +49,7 @@ function AboutMe() {
               </h4>
               <h4 className="description">
                 <img src="/favicon.png" alt="star" />
-                2023.04 ~ 2023.06 메타버스 핵심기술, 블록체인 기반의 기술사업화 전문인력 양성과정 수료
+                2021.08 ~ 2022.05 블록체인 기반 핀테크 및 응용 SW개발자 양성과정 수료
               </h4>
             </div>
             <h3 className="skills__content__main">

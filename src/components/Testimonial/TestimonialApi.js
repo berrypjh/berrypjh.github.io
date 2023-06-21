@@ -48,7 +48,7 @@ const TestimonialApi = [
     image: "/project_img/Musit.png",
     name: "Musit x NFT 음원 프로젝트",
     explanation: "음원에 블록체인을 적용하여 투명한 수익 분배를 제공하는 이더리움 기반 NFT 음원 스트리밍 플랫폼 개발하기",
-    term: "2022-04-08 ~ 2022-05-02 (총 56일)",
+    term: "2022-03-08 ~ 2022-05-02 (총 56일)",
     items: [
       "Ethereum",
       "Javascript",
