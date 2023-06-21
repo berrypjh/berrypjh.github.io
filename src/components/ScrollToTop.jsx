@@ -9,18 +9,17 @@ function ScrollToTop() {
   return (
     <>
       <ImgGitHub>
-        <a
-          href="https://github.com/berrypjh"
-          className={`${visible ? "block" : "none"}`}
-        >
+        <a href="https://github.com/berrypjh" className={`${visible ? "block" : "none"}`}>
           <img src="/stack_icons/GitHub.png" alt="" />
         </a>
       </ImgGitHub>
+      <ImgNotion>
+        <a href="https://quark-tangelo-d51.notion.site/eeb139e32de144789fab695fb162ea39?v=40b537c2fd00475085fd54ef008085f9" className={`${visible ? "block" : "none"}`}>
+          <img src="/stack_icons/Notion.jpg" alt="" />
+        </a>
+      </ImgNotion>
       <ImgTistory>
-        <a
-          href="https://berrypjh.tistory.com"
-          className={`${visible ? "block" : "none"}`}
-        >
+        <a href="https://berrypjh.tistory.com" className={`${visible ? "block" : "none"}`}>
           <img src="/stack_icons/Tistory.png" alt="" />
         </a>
       </ImgTistory>
@@ -69,7 +68,8 @@ const ImgGitHub = styled.div`
     }
   }
 `;
-const ImgTistory = styled.div`
+
+const ImgNotion = styled.div`
   max-width: 100vw;
   .none {
     opacity: 0;
@@ -79,6 +79,43 @@ const ImgTistory = styled.div`
     position: fixed;
     bottom: 25px;
     right: 145px;
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    z-index: 99;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    svg {
+      background-color: var(--secondary-font-color);
+      font-size: 1.3rem;
+      path {
+        color: var(--primary-background-color);
+      }
+    }
+    @media screen and (min-width: 280px) and (max-width: 1080px) {
+      left: 75vw;
+      right: initial;
+    }
+  }
+`;
+
+const ImgTistory = styled.div`
+  max-width: 100vw;
+  .none {
+    opacity: 0;
+    visibility: hidden;
+  }
+  a {
+    position: fixed;
+    bottom: 25px;
+    right: 205px;
     background-color: transparent;
     padding: 1rem;
     border-radius: 100%;

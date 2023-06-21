@@ -8,11 +8,7 @@ export default function Home() {
   return (
     <Section id="home">
       <Navbar />
-      <motion.div
-        variants={homeAnimation}
-        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
-        className="home"
-      >
+      <motion.div variants={homeAnimation} transition={{ delay: 0.3, duration: 0.6, type: "tween" }} className="home">
         <div className="content">
           <div className="title">
             <h1>I AM BLOCKCHAIN DEVELOPER</h1>
@@ -20,10 +16,13 @@ export default function Home() {
           <div className="subTitle">
             <p>#블록체인 #웹 #블로그 #정리 #신입</p>
             <a href="https://github.com/berrypjh">
-              <img src="/stack_icons/GitHub.png" alt="" />
+              <img src="/stack_icons/GitHub.png" alt="GitHub" />
+            </a>
+            <a href="https://quark-tangelo-d51.notion.site/eeb139e32de144789fab695fb162ea39?v=40b537c2fd00475085fd54ef008085f9">
+              <img src="/stack_icons/Notion.jpg" alt="Notion" />
             </a>
             <a href="https://berrypjh.tistory.com">
-              <img src="/stack_icons/Tistory.png" alt="" />
+              <img src="/stack_icons/Tistory.png" alt="Tistory" />
             </a>
           </div>
         </div>

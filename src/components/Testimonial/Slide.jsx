@@ -21,7 +21,7 @@ const Slide = ({ id, image, items, name, explanation, term, mission, valueIndex,
                 <a href={BlogLink}>
                   {(id === 1 || id === 2) && <img src="/stack_icons/H.png" alt="" />}
                   {id === 7 && <img src="/stack_icons/Tistory.png" alt="" />}
-                  {!(id === 1 || id === 2 || id === 7) && <img src="/stack_icons/Notion.png" alt="" />}
+                  {!(id === 1 || id === 2 || id === 7) && <img src="/stack_icons/Notion.jpg" alt="" />}
                   <div className="btn_text">상세 정보</div>
                 </a>
               </span>
