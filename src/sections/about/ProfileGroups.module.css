@@ -1,0 +1,59 @@
+.groups {
+  margin: 0;
+}
+
+.group {
+  padding-top: clamp(1.5rem, 2.1vw, 2rem);
+  padding-bottom: clamp(2rem, 2.9vw, 2.75rem);
+}
+
+/* rule sits between groups only, never above the first */
+.group + .group {
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.group:first-child {
+  padding-top: 0;
+}
+
+.group:last-child {
+  padding-bottom: 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.head::after {
+  content: '';
+  flex: none;
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-border-strong);
+}
+
+.values {
+  margin: clamp(0.875rem, 1.2vw, 1.125rem) 0 0;
+  font-size: clamp(1.0625rem, 1.5vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.77;
+  letter-spacing: -0.005em;
+  color: var(--color-text);
+}
+
+/* Tablet and below: the groups stack, each under its own top rule. */
+@media (max-width: 900px) {
+  .group,
+  .group:first-child {
+    padding-top: clamp(1.5rem, 2.1vw, 2rem);
+    border-top: 1px solid var(--color-border-strong);
+  }
+
+  .group:last-child {
+    padding-bottom: clamp(2rem, 2.9vw, 2.75rem);
+  }
+}
+

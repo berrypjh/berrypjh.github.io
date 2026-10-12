@@ -1,0 +1,164 @@
+/* Hero layout constants, kept together so the composition is tuned in one place. */
+.hero {
+  --hero-headline: clamp(2.5rem, 5.2vw, 5rem);
+  --hero-stage-h: clamp(22rem, 62svh, 44rem);
+  --hero-stage-bleed: var(--container-pad);
+
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(1rem, 2vh, 2rem);
+  padding-bottom: clamp(3rem, 9vh, 6.5rem);
+  /*
+   * Two-layer light behind the stage: a tight warm core over a wide ambient wash.
+   * Both fade out before the section edge so there is no seam into the next section.
+   */
+  background:
+    radial-gradient(
+      26% 32% at 70% 42%,
+      color-mix(in srgb, var(--color-gold-soft) 7%, transparent),
+      transparent 80%
+    ),
+    radial-gradient(
+      70% 75% at 72% 30%,
+      color-mix(in srgb, var(--color-gold) 4%, transparent),
+      transparent 70%
+    );
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/*
+ * Copy spans columns 1–6, the stage columns 6–12 plus the right gutter.
+ * They share one row and overlap by a column of empty stage, so the field
+ * crosses the grid line while its geometry stays right of the copy.
+ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  align-items: center;
+  flex: 1;
+}
+
+.stage {
+  --assembly-x: 60%;
+  --delay: 300ms;
+
+  grid-row: 1;
+  grid-column: 6 / -1;
+  height: var(--hero-stage-h);
+  margin-right: calc(var(--hero-stage-bleed) * -1);
+}
+
+/* positioned like the stage, so DOM order keeps the copy painted above it without z-index */
+.content {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1 / span 6;
+}
+
+.headline {
+  margin-top: clamp(1.5rem, 2.6vw, 2.5rem);
+  font-size: var(--hero-headline);
+  font-weight: 800;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-text);
+}
+
+.headline span {
+  display: block;
+  /* the headline travels in em so it stays proportional at every size */
+  --rise: 0.3em;
+}
+
+.headline span:nth-child(1) {
+  --delay: 120ms;
+}
+
+.headline span:nth-child(2) {
+  --delay: 220ms;
+}
+
+.headline span:nth-child(3) {
+  --delay: 320ms;
+}
+
+.focus {
+  --delay: 480ms;
+  margin-top: clamp(1.5rem, 2.2vw, 2.25rem);
+  color: var(--color-text-soft);
+}
+
+/* links in scroll order: About is next, Selected Work follows */
+.action {
+  --delay: 580ms;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) clamp(1.5rem, 2.6vw, 2.5rem);
+  margin-top: clamp(1.75rem, 2.6vw, 2.75rem);
+}
+
+/* hairline closing the hero, echoing the gold-led rule under each project card */
+.handoff {
+  --delay: 700ms;
+  position: relative;
+  height: 1px;
+  margin-top: clamp(2.5rem, 6vh, 4.5rem);
+  background-color: var(--color-border);
+}
+
+.handoff::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8%;
+  content: '';
+  background-color: var(--color-gold-muted);
+}
+
+/* Large desktop only: one viewport under the header, never a hard clamp. */
+@media (min-width: 1024px) and (min-height: 720px) {
+  .hero {
+    min-height: calc(100svh - var(--header-h));
+  }
+}
+
+/* Tablet and below: the stage leads, copy follows at full width. */
+@media (max-width: 900px) {
+  .hero {
+    --hero-headline: var(--text-display);
+  }
+
+  .stage,
+  .content {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .stage {
+    --assembly-x: 50%;
+    /* the height cap keeps landscape phones from opening on a screen of pure stage */
+    height: min(52vw, 26rem, 50svh);
+    margin-right: 0;
+  }
+
+  .content {
+    margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  }
+}
+
+/* Phone: full-bleed stage, capped by height so short screens still reach the headline. */
+@media (max-width: 640px) {
+  .hero {
+    padding-top: var(--space-4);
+  }
+
+  .stage {
+    height: min(64vw, 42svh);
+    margin-inline: calc(var(--container-pad) * -1);
+  }
+}

@@ -1,0 +1,121 @@
+.lab {
+  padding-top: var(--space-section-lead);
+  padding-bottom: var(--space-section);
+  /* ambient light, alternating sides down the page; extent stays inside the section edges */
+  background: radial-gradient(50% 50% at 88% 35%, var(--color-glow), transparent 70%);
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gutter);
+  margin-bottom: clamp(2rem, 3.4vw, 3rem);
+}
+
+.heading {
+  margin-top: clamp(1.25rem, 2.1vw, 1.875rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.875rem);
+  font-weight: 800;
+  line-height: 1.32;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.heading span {
+  display: block;
+  /* the heading travels in em so it stays proportional at every size */
+  --rise: 0.3em;
+}
+
+.description {
+  margin-top: clamp(1rem, 1.5vw, 1.375rem);
+  font-size: clamp(0.875rem, 1vw, 0.9375rem);
+  line-height: 1.78;
+  color: var(--color-text-soft);
+}
+
+/* list on the left; from standard desktop up, the preview follows on the right */
+@media (min-width: 1280px) {
+  .archive {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 18rem;
+    align-items: start;
+    gap: clamp(1.5rem, 2.4vw, 2.5rem);
+  }
+}
+
+.years {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+/* the year reads as a rule with a label, not a second heading style */
+.yearLabel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 clamp(0.75rem, 1.2vw, 1rem);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--tracking-meta);
+  color: var(--color-gold);
+}
+
+.yearLabel::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* one surface per year: rows split by hairlines, newest first, equal weight */
+.grid {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  overflow: clip;
+}
+
+.grid > li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.empty {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+}
+
+/* visually hidden, still read by assistive tech */
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .head {
+    flex-direction: column;
+    gap: clamp(1.75rem, 4vw, 2.5rem);
+  }
+}
+
+/* stagger within the block, in reading order */
+.heading span:nth-child(1) {
+  --delay: 90ms;
+}
+
+.heading span:nth-child(2) {
+  --delay: 180ms;
+}
+
+.description {
+  --delay: 280ms;
+}

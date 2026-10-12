@@ -1,0 +1,25 @@
+.shot {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* taller than the frame: full width, the top kept, the bottom cropped */
+.fill {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* wider than the frame: full width, centred between graphite bands */
+.wide {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* portrait: whole and centred, with a little air around it */
+.portrait {
+  padding: 5%;
+  object-fit: contain;
+  object-position: center;
+}

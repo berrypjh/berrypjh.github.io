@@ -1,0 +1,111 @@
+/* the thumbnail itself is the control; it keeps the stage's shape and the global focus ring */
+.trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: zoom-in;
+  background: none;
+  border: 0;
+  border-radius: clamp(6px, 0.55vw, 10px);
+}
+
+/* a small magnifier that appears on hover and focus, so the affordance is not hover-only */
+.badge {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-text);
+  background-color: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--duration) var(--ease);
+}
+
+.trigger:hover .badge,
+.trigger:focus-visible .badge {
+  opacity: 1;
+}
+
+.badgeIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ── the enlarged view ── */
+.dialog {
+  max-width: min(92vw, 1280px);
+  max-height: 92vh;
+  padding: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+}
+
+.dialog::backdrop {
+  background-color: color-mix(in srgb, #000 72%, transparent);
+}
+
+.dialog[open] {
+  animation: appear var(--duration-enter) var(--ease);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.caption {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  font-size: 0.8125rem;
+  color: var(--color-text-soft);
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+}
+
+.close:hover,
+.close:focus-visible {
+  color: var(--color-text);
+  border-color: var(--color-gold);
+}
+
+.closeIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* never larger than the viewport, never upscaled past its own pixels */
+.full {
+  display: block;
+  max-width: 100%;
+  max-height: calc(92vh - 3.5rem);
+  margin-inline: auto;
+}

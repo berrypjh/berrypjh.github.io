@@ -1,0 +1,45 @@
+/**
+ * Shared entrance motion.
+ *
+ * One rise per block, never a loop, and the same in every browser.
+ * Blocks in the first screen run on load. Blocks below the fold add
+ * .reveal-on-scroll: the rise waits, paused, until the block first scrolls into
+ * view (reveal.ts marks it data-revealed), then plays once.
+ *
+ * The wait only applies once reveal.ts has marked the page (.js-reveal), so
+ * without script every block is simply shown. fill-mode backwards means the
+ * resting state is the element's normal style, so switching the motion off
+ * changes nothing else. Sections tune the motion through --delay and --rise
+ * only; they never redefine it.
+ */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    translate: 0 var(--rise, 2rem);
+  }
+}
+
+/*
+ * In-place entrance: something appearing where it already belongs
+ * (a swapped preview, an opened dialog). Shorter and closer than the rise.
+ */
+@keyframes appear {
+  from {
+    opacity: 0;
+    translate: 0 0.375rem;
+  }
+}
+
+.reveal {
+  animation: rise-in 900ms var(--ease) var(--delay, 0ms) backwards;
+}
+
+.js-reveal .reveal-on-scroll:not([data-revealed]) {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+}

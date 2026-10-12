@@ -1,0 +1,46 @@
+/* sizes from the stage width (cqw), so the band keeps its proportions at every breakpoint */
+.preview {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 3.5cqw 4cqw 3cqw;
+}
+
+/* graphic numeral, barely above the panel, like the About section's mark */
+.year {
+  font-size: 14cqw;
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: color-mix(in srgb, var(--p-text) 9%, transparent);
+}
+
+/* one column per year, so ticks line up with the month math exactly */
+.track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--years), minmax(0, 1fr));
+  border-top: 1px solid var(--p-line);
+}
+
+.tick {
+  padding: 1.1cqw 0 0 1cqw;
+  font-family: var(--font-mono);
+  font-size: max(0.5625rem, 1.9cqw);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: var(--p-dim);
+  border-left: 1px solid var(--p-line);
+}
+
+/* this project's span; a floor keeps two-day projects visible */
+.range {
+  position: absolute;
+  top: -1.5px;
+  left: var(--from);
+  width: max(calc(var(--to) - var(--from)), 4px);
+  height: 2px;
+  background-color: var(--color-gold);
+}

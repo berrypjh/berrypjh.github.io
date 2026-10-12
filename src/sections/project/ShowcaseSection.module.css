@@ -1,0 +1,38 @@
+/* each section follows another, so the previous one's bottom already holds the gap */
+.showcase {
+  padding-top: var(--space-section-lead);
+  padding-bottom: var(--space-section);
+}
+
+/* ambient light, alternating sides down the page; extent stays inside the section edges */
+.right {
+  background: radial-gradient(50% 50% at 88% 55%, var(--color-glow), transparent 70%);
+}
+
+.left {
+  background: radial-gradient(50% 50% at 12% 45%, var(--color-glow), transparent 70%);
+}
+
+.head {
+  margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+/* 25 / 70 editorial split */
+.spread {
+  display: grid;
+  grid-template-columns: minmax(0, 25%) minmax(0, 1fr);
+  column-gap: clamp(2.75rem, 6vw, 5.5rem);
+}
+
+.summary {
+  align-self: start;
+}
+
+/* Tablet: summary above the gallery. */
+@media (max-width: 900px) {
+  .spread {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 6vw, 4rem);
+  }
+}

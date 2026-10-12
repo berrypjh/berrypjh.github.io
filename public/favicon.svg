@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <style>
+    .mark { stroke: #F1EEE7; }
+    @media (prefers-color-scheme: light) { .mark { stroke: #0B0B0A; } }
+  </style>
+  <g transform="translate(41 -19)" fill="none" stroke-width="128">
+    <path class="mark" d="M224 680A118 118 0 0 0 460 680V264H600A118 118 0 0 1 600 500H460"/>
+    <path stroke="#B89A5E" stroke-width="128" d="M224 680V616"/>
+  </g>
+</svg>

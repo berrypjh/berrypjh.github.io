@@ -1,0 +1,44 @@
+/**
+ * The preview panel itself: the card supplies the inset, this supplies the frame.
+ * container-type lets every miniature size itself from the panel width (cqw),
+ * so a preview scales identically at any breakpoint.
+ */
+.stage {
+  container-type: inline-size;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--p-line);
+  border-radius: clamp(6px, 0.55vw, 10px);
+}
+
+.featured {
+  aspect-ratio: 5 / 3;
+}
+
+.card {
+  aspect-ratio: 6 / 5;
+}
+
+.wide {
+  aspect-ratio: 16 / 10;
+}
+
+.dark {
+  --p-bg: #1a1815;
+  --p-face: #121210;
+  --p-raised: #221f1a;
+  --p-text: #ddd8cf;
+  --p-dim: #8a847a;
+  --p-line: #302c25;
+  background-color: var(--p-bg);
+}
+
+.light {
+  --p-bg: #eeece8;
+  --p-face: #fbfaf8;
+  --p-raised: #ffffff;
+  --p-text: #1a1b1d;
+  --p-dim: #6b6964;
+  --p-line: #dcdad4;
+  background-color: var(--p-bg);
+}

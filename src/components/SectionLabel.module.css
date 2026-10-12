@@ -1,0 +1,48 @@
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.marked {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.marked::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-gold);
+  border-radius: 1px;
+}
+
+/* reserved for the "NN / SECTION" eyebrows; metadata labels stay muted */
+.gold {
+  color: var(--color-gold);
+}
+
+/* the section's own `#` link: hidden until the label is hovered or the link is focused */
+.anchor {
+  color: var(--color-text-muted);
+  opacity: 0;
+  transition:
+    opacity var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+
+.label:hover .anchor,
+.anchor:focus-visible {
+  opacity: 1;
+}
+
+.anchor:hover,
+.anchor:focus-visible {
+  color: var(--color-gold-soft);
+}

@@ -1,0 +1,92 @@
+/**
+ * Sticky and in flow, so the hero starts below it rather than under it.
+ * The only z-index on the page: anything later in the DOM, including a future
+ * hero canvas, stays at the default layer beneath it.
+ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: color-mix(in srgb, var(--color-bg) 86%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  min-height: var(--header-h);
+}
+
+.identity {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.identity:hover span,
+.identity:focus-visible span {
+  color: var(--color-text);
+}
+
+.links {
+  display: flex;
+  gap: clamp(0.25rem, 1.5vw, 1.25rem);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  transition: color var(--duration) var(--ease);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--color-text);
+}
+
+/* off-screen until focused, then the first thing a keyboard user sees */
+.skip {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface-raised);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  translate: 0 -200%;
+}
+
+.skip:focus-visible {
+  translate: 0;
+}
+
+/* Mobile: identity above the links, and the header scrolls away with the page. */
+@media (max-width: 640px) {
+  .header {
+    position: static;
+  }
+
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-block: var(--space-2);
+  }
+
+  .links {
+    margin-left: -0.5rem;
+  }
+}

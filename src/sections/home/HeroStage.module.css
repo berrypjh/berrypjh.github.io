@@ -1,0 +1,64 @@
+/**
+ * The stage owns its size; its children never affect it.
+ * The fallback is a static, orthographic view of the same exploded page as the scene:
+ * browser window at the back, the page in the middle, one round control in front. No motion.
+ */
+.stage {
+  container-type: inline-size;
+  position: relative;
+  overflow: clip;
+  /* faint pool of raised surface under the object, in place of any bloom */
+  background: radial-gradient(
+    50% 45% at var(--assembly-x, 50%) 55%,
+    color-mix(in srgb, var(--color-surface-raised) 80%, transparent),
+    transparent
+  );
+}
+
+.assembly {
+  --layer-gap: 7cqw;
+
+  position: absolute;
+  top: 50%;
+  left: var(--assembly-x, 50%);
+  width: 50%;
+  aspect-ratio: 16 / 10;
+  translate: -50% -50%;
+  transform: rotateX(6deg) rotateY(-32deg);
+  transform-style: preserve-3d;
+}
+
+.window,
+.layout,
+.card {
+  position: absolute;
+  border-radius: var(--radius-sm);
+}
+
+/* rear: the window, its title bar drawn as a band across the top */
+.window {
+  inset: 0;
+  background:
+    linear-gradient(var(--color-border-strong), var(--color-border-strong)) top / 100% 10% no-repeat,
+    color-mix(in srgb, var(--color-surface-raised) 85%, transparent);
+  border: 1px solid var(--color-border-strong);
+  translate: 0 0 calc(var(--layer-gap) * -1);
+}
+
+/* middle: the page outline */
+.layout {
+  inset: 14% 3% 4%;
+  border: 1px solid var(--color-text-faint);
+}
+
+/* front: one round control, a play button, with a thin gold ring */
+.card {
+  top: 38%;
+  left: 42%;
+  width: 16%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-gold-muted);
+  translate: 0 0 var(--layer-gap);
+}

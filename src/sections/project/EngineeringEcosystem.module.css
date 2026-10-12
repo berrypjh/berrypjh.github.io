@@ -1,0 +1,254 @@
+/* two sibling panels, stacked: the products, the PR boundary, then the review; never one box around all four */
+.ecosystem {
+  --gap: clamp(0.75rem, 1.1vw, 1rem);
+  --inset: clamp(1rem, 1.4vw, 1.25rem);
+  display: grid;
+  align-content: start;
+}
+
+/* the gallery card's frame: surface, strong rule, the shared radius */
+.panel {
+  padding: clamp(1rem, 1.5vw, 1.375rem);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+}
+
+/* the heading only carries semantics; the label sets its own type */
+.panelHeading {
+  margin-bottom: clamp(1rem, 1.5vw, 1.375rem);
+  font: inherit;
+}
+
+/* ── a repository: nested in its panel, radius follows the stage inside the gallery cards ── */
+.node {
+  padding: var(--inset);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) / 2);
+}
+
+.name {
+  margin: clamp(0.75rem, 1.1vw, 1rem) 0 0;
+  font-size: clamp(1rem, 1.22vw, 1.125rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+
+.lines {
+  margin-top: clamp(0.5rem, 0.8vw, 0.75rem);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* a little air between items, so a wrapped line never reads as the next item */
+.lines li + li {
+  margin-top: 0.375rem;
+}
+
+/* the foundation reads first: the featured card's short gold rule, a step larger name */
+.foundation::before {
+  display: block;
+  width: clamp(1.75rem, 2.4vw, 2.25rem);
+  height: 2px;
+  margin-bottom: var(--inset);
+  content: '';
+  background-color: var(--color-gold);
+}
+
+.foundation .name {
+  font-size: clamp(1.25rem, 1.75vw, 1.625rem);
+  letter-spacing: -0.02em;
+}
+
+/*
+ * Foundation → products, solid gold-muted 1px: a stem from the foundation,
+ * then one bracket that drops onto the centre of each product. The label sits beside the stem.
+ */
+.branch {
+  --branch-h: clamp(3rem, 4.5vw, 4rem);
+  position: relative;
+  height: var(--branch-h);
+  padding-left: calc(50% + 0.75rem);
+}
+
+.branch::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50%;
+  content: '';
+  border-left: 1px solid var(--color-gold-muted);
+}
+
+.branch::after {
+  position: absolute;
+  inset: 50% calc((100% - var(--gap)) / 4) 0;
+  content: '';
+  border: 1px solid var(--color-gold-muted);
+  border-bottom: 0;
+}
+
+.branchLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  line-height: calc(var(--branch-h) / 2);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+}
+
+/* products side by side, equal height: each item is a grid so its card stretches */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.products > li {
+  display: grid;
+}
+
+/* ── the PR boundary: dashed, fainter than the dependency, and labelled in words ── */
+.boundary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 1.5vw, 1.375rem);
+}
+
+.boundaryLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.boundaryLine {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.boundaryLine::before {
+  flex: 1;
+  content: '';
+  border-top: 1px dashed var(--color-text-faint);
+}
+
+.boundaryLine::after {
+  content: '↓';
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  line-height: 1;
+  color: var(--color-text-faint);
+}
+
+/* ── the review product: its card beside what it covers today ── */
+.reviewBody {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: var(--inset);
+  padding-top: var(--inset);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  border-top: 1px solid var(--color-border);
+}
+
+.flow li + li::before {
+  margin-right: 0.75rem;
+  content: '→' / '';
+  color: var(--color-gold);
+}
+
+/* plain rows, no status colour; the label lines up with the card's beside it */
+.coverage {
+  padding: calc(var(--inset) + 1px) calc(var(--inset) + 1px) 0;
+}
+
+.coverageList {
+  margin: clamp(0.75rem, 1.1vw, 1rem) 0 0;
+}
+
+.coverageRow {
+  padding-block: clamp(0.625rem, 0.9vw, 0.75rem);
+  border-top: 1px solid var(--color-border);
+}
+
+.coverageRow dt {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-soft);
+}
+
+.coverageRow dd {
+  margin: 0.375rem 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Mobile: one stem instead of the bracket, everything in one column. */
+@media (max-width: 640px) {
+  .branch {
+    padding-left: calc(var(--inset) + 0.75rem);
+  }
+
+  .branch::before {
+    left: var(--inset);
+    height: 100%;
+  }
+
+  .branch::after {
+    display: none;
+  }
+
+  .branchLabel {
+    line-height: var(--branch-h);
+  }
+
+  .products,
+  .reviewBody {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .coverage {
+    padding-top: var(--inset);
+  }
+}
+
+/* stagger in reading order: the products, the boundary, then the review */
+.boundary {
+  --delay: 120ms;
+}
+
+.review {
+  --delay: 240ms;
+}

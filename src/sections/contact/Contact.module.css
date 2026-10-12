@@ -1,0 +1,234 @@
+/* The closing screen: fewer surfaces, wider air, typography carrying the weight. */
+.contact {
+  padding-top: var(--space-section-lead);
+  /* ambient light, alternating sides down the page; extent stays inside the section edges */
+  background: radial-gradient(50% 50% at 12% 45%, var(--color-glow), transparent 70%);
+}
+
+.heading {
+  margin-top: clamp(1.25rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.875rem, 3.7vw, 3.3125rem);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.heading span {
+  display: block;
+  /* the heading travels in em so it stays proportional at every size */
+  --rise: 0.3em;
+}
+
+/* the bridge from the heading to the topics: where explaining happens in each kind of work */
+.lede {
+  --delay: 280ms;
+  margin-top: clamp(1.25rem, 2vw, 1.75rem);
+  max-width: 40em;
+  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  line-height: 1.85;
+  color: var(--color-text-soft);
+}
+
+/* topic index: three columns split by hairlines, closed by a single rule */
+.activities {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(2.25rem, 3.8vw, 3.4375rem);
+  border-bottom: 1px solid var(--color-border-strong);
+}
+
+.col {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  column-gap: clamp(0.75rem, 1.4vw, 1.25rem);
+  align-items: start;
+  padding: clamp(0.375rem, 0.7vw, 0.625rem) clamp(1rem, 2.2vw, 2rem)
+    clamp(1.5rem, 2vw, 1.8125rem) 0;
+}
+
+.col + .col {
+  padding-left: clamp(1.5rem, 3.9vw, 3.5rem);
+  border-left: 1px solid var(--color-border-strong);
+}
+
+.number {
+  font-size: clamp(2.75rem, 5.3vw, 4.75rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.category {
+  color: var(--color-gold);
+}
+
+/* the zone's size, counted from the blog */
+.count {
+  margin-top: clamp(0.75rem, 1.1vw, 1rem);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  letter-spacing: 0.04em;
+  color: var(--color-text-soft);
+}
+
+.description {
+  margin-top: clamp(0.625rem, 1vw, 0.875rem);
+  font-size: clamp(0.875rem, 1.1vw, 1rem);
+  line-height: 1.9;
+  color: var(--color-text-soft);
+}
+
+/* a zone's link, once it is published: the editorial text link at body scale */
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: clamp(0.75rem, 1.2vw, 1rem);
+  padding-bottom: 0.3em;
+  font-size: clamp(0.8125rem, 0.95vw, 0.875rem);
+  font-weight: 500;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border-strong);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.more:hover,
+.more:focus-visible {
+  border-bottom-color: var(--color-gold);
+}
+
+.moreArrow {
+  color: var(--color-text-muted);
+  transition:
+    color var(--duration) var(--ease),
+    translate var(--duration) var(--ease);
+}
+
+.more:hover .moreArrow,
+.more:focus-visible .moreArrow {
+  color: var(--color-gold-soft);
+  translate: var(--nudge) calc(var(--nudge) * -1);
+}
+
+/* the transition into the closing statement */
+.closing {
+  margin-top: clamp(3.5rem, 7vw, 6.375rem);
+}
+
+.dash {
+  display: block;
+  width: clamp(1.25rem, 1.8vw, 1.625rem);
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+.statement {
+  margin-top: clamp(1.5rem, 2.4vw, 2.125rem);
+  font-size: clamp(1.375rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.75rem, 7.85vw, 7.0625rem);
+  margin-top: clamp(2rem, 3.2vw, 2.875rem);
+}
+
+/* same interaction vocabulary as the other sections, at closing scale */
+.link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+  padding-bottom: 0.32em;
+  font-size: clamp(1.75rem, 3.35vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-gold-muted);
+  transition: border-color var(--duration) var(--ease);
+}
+
+.link:hover,
+.link:focus-visible {
+  border-bottom-color: var(--color-gold);
+}
+
+.link:hover .linkArrow,
+.link:focus-visible .linkArrow {
+  color: var(--color-gold-soft);
+  translate: var(--nudge) calc(var(--nudge) * -1);
+}
+
+.linkArrow {
+  font-size: 0.62em;
+  color: var(--color-text-soft);
+  transition:
+    color var(--duration) var(--ease),
+    translate var(--duration) var(--ease);
+}
+
+/* Tablet: three columns become one stack, dividers turn horizontal. */
+@media (max-width: 900px) {
+  .activities {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .col {
+    padding: clamp(1.5rem, 3vw, 2rem) 0;
+  }
+
+  .col + .col {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--color-border-strong);
+  }
+}
+
+@media (max-width: 640px) {
+  /* the lines are set for a wide column; on a phone the sentences wrap on their own */
+  .lede br {
+    display: none;
+  }
+
+  .col {
+    grid-template-columns: 4rem minmax(0, 1fr);
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* stagger within the block, in reading order */
+.heading span:nth-child(1) {
+  --delay: 90ms;
+}
+
+.heading span:nth-child(2) {
+  --delay: 180ms;
+}
+
+.activities .col:nth-child(2) {
+  --delay: 120ms;
+}
+
+.activities .col:nth-child(3) {
+  --delay: 240ms;
+}
+
+.statement {
+  --delay: 120ms;
+}
+
+.links > :nth-child(2) {
+  --delay: 120ms;
+}

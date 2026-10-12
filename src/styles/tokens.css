@@ -1,0 +1,87 @@
+/**
+ * Portfolio design tokens.
+ * Graphite dark editorial system shared by every portfolio section.
+ */
+:root {
+  /* surface — warm graphite, never pure black */
+  --color-bg: #0b0b0a;
+  --color-surface: #121210;
+  --color-surface-raised: #191815;
+
+  /* text — warm off-white, never pure white */
+  --color-text: #f1eee7;
+  --color-text-soft: #b8b2a6;
+  --color-text-muted: #918c82;
+  /* faint is for decorative, aria-hidden marks only — it does not meet AA as text */
+  --color-text-faint: #6e685d;
+
+  /* line */
+  --color-border: #2d2a24;
+  --color-border-strong: #3d392f;
+
+  /*
+   * gold — the signature, never a surface.
+   * gold:       small text and marks that must stay legible (7.2:1)
+   * gold-muted: 1px rules and state borders only, never text
+   * gold-soft:  hover and focus, one step brighter
+   */
+  --color-gold: #b89a5e;
+  --color-gold-muted: #8d7548;
+  --color-gold-soft: #d3b976;
+  /* ambient section light, one step quieter than the hero */
+  --color-glow: color-mix(in srgb, var(--color-gold) 3%, transparent);
+
+  /* purely graphic typography, barely above the background */
+  --color-graphic: #1b1916;
+
+  /* type */
+  --font-sans: 'Pretendard Variable', Pretendard, Inter, -apple-system,
+    BlinkMacSystemFont, system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-mono: 'Geist Mono', 'IBM Plex Mono', ui-monospace, SFMono-Regular,
+    Menlo, monospace;
+
+  --text-display: clamp(2.25rem, 8vw, 6.5rem);
+  --text-heading: clamp(2rem, 4.75vw, 4.25rem);
+  --text-title: clamp(1.25rem, 1.6vw, 1.5rem);
+  --text-body: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  --text-meta: 0.75rem;
+
+  --leading-display: 1.04;
+  --leading-body: 1.75;
+  --tracking-display: -0.03em;
+  --tracking-meta: 0.12em;
+
+  /* rhythm */
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-section: clamp(6rem, 14vw, 13rem);
+  /* top of a section that follows another: the previous section's bottom already holds the gap */
+  --space-section-lead: clamp(3rem, 5vw, 5rem);
+
+  /* shell */
+  --container-max: 1360px;
+  --container-pad: clamp(1.25rem, 4vw, 3.5rem);
+  --gutter: clamp(2rem, 3.2vw, 3rem);
+
+  --header-h: 3.5rem;
+
+  --radius: 20px;
+  --radius-sm: 4px;
+
+  /*
+   * motion: one curve, three lengths
+   * duration:       hover and focus feedback on a control
+   * duration-enter: something appearing in place (a panel opening, a dialog, a swapped image)
+   * 900ms rise:     the scroll reveal, defined once in motion.css
+   * nudge:          how far an arrow travels toward where it leads
+   */
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --duration: 180ms;
+  --duration-enter: 280ms;
+  --nudge: 3px;
+}

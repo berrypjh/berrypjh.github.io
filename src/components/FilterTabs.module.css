@@ -1,0 +1,77 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.filter {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition:
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+}
+
+/* hover and keyboard focus preview the selected state without borrowing its gold */
+.filter:hover,
+.filter:focus-visible {
+  color: var(--color-text);
+  border-bottom-color: var(--color-border-strong);
+}
+
+/* selected state is the accent rule and colour, never a filled pill */
+.filter[aria-pressed='true'] {
+  color: var(--color-text);
+  border-bottom-color: var(--color-gold);
+}
+
+/* mono: compact uppercase tabs */
+.mono {
+  gap: clamp(1.25rem, 2.9vw, 2.625rem);
+}
+
+.mono .filter {
+  padding: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+}
+
+/* text: larger sentence-case tabs divided by hairline slashes */
+.text {
+  gap: clamp(0.75rem, 1.5vw, 1.375rem);
+}
+
+.text .filter {
+  padding: 0 0 0.625rem;
+  font-size: clamp(0.9375rem, 1.33vw, 1.1875rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-text-soft);
+  border-bottom: 2px solid transparent;
+}
+
+.divider {
+  font-size: clamp(0.875rem, 1.15vw, 1.0625rem);
+  line-height: 1.2;
+  color: var(--color-border-strong);
+}
+
+/* forced colors paint transparent borders, which would underline every tab; keep the rule on the selected one only */
+@media (forced-colors: active) {
+  .filter,
+  .filter:hover {
+    border-bottom-color: Canvas;
+  }
+
+  .filter[aria-pressed='true'] {
+    border-bottom-color: Highlight;
+  }
+}
