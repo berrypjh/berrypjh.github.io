@@ -25,14 +25,14 @@ const TOPICS: readonly Topic[] = [
     category: 'Web Accessibility',
     count: '준비 중',
     lines: ['장애 유형 · 보조 기술 ·', '키보드 · 명도 대비'],
-    href: undefined,
+    href: 'https://it-tech-blog-gj6u.vercel.app/accessibility',
   },
   {
     number: '03',
     category: 'LLM System',
     count: '준비 중',
     lines: ['모델에서 시스템까지,', 'LLM 소프트웨어 실험실'],
-    href: undefined,
+    href: 'https://it-tech-blog-gj6u.vercel.app/llm',
   },
 ]
 

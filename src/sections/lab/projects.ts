@@ -377,7 +377,7 @@ export const PROJECTS: readonly Project[] = [
     repository: 'https://github.com/berrypjh/snapdone',
     links: [
       { label: 'Service', href: 'https://web-1017137419808.asia-northeast3.run.app/' },
-      { label: 'Docs', href: 'https://snapdone-fjt0xs3u5-junhyuk-s-projects2.vercel.app/' },
+      { label: 'Docs', href: 'https://snapdone-seven.vercel.app/' },
     ],
     responsibilities: [
       'Nx 모노레포로 Next.js 웹 · Expo 모바일 · Go API 구성',
