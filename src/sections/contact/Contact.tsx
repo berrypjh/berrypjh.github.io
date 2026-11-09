@@ -29,10 +29,10 @@ const TOPICS: readonly Topic[] = [
   },
   {
     number: '03',
-    category: 'LLM System',
+    category: 'Computer Architecture',
     count: '준비 중',
-    lines: ['모델에서 시스템까지,', 'LLM 소프트웨어 실험실'],
-    href: 'https://it-tech-blog-gj6u.vercel.app/llm',
+    lines: ['디지털 회로에서 CPU까지,', '직접 만져 보는 컴퓨터 구조'],
+    href: 'https://it-tech-blog-gj6u.vercel.app/computer-architecture',
   },
 ]
 
